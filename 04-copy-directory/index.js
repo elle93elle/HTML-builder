@@ -7,9 +7,9 @@ fs.mkdir( path.join(__dirname, 'files-copy'),(error) => {
 
   fs.readdir(path.join(__dirname,'files'), (error, files) => {
     if (error) return console.error(error.message);
-    for (let file of files) {
+   files.forEach (file => {
         fs.copyFile(path.join(__dirname,'files', file),path.join(__dirname,'files-copy',file), error => {
             if (error) return console.error(error.message);
         })
-    }
+    })
 })
